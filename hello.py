@@ -73,6 +73,8 @@ def count_words(text):
 
 def average(numbers):
     """计算平均数"""
+    if not numbers:
+        return 0
     return sum(numbers) / len(numbers)
 
 def main():
