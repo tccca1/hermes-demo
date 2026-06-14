@@ -37,6 +37,32 @@ def fibonacci(n):
         a, b = b, a + b
     return b
 
+
+def calculate_statistics(numbers):
+    """计算一组数字的统计信息
+    返回: (平均值, 中位数, 标准差)
+    """
+    n = len(numbers)
+    if n == 0:
+        return (0, 0, 0)
+
+    # 平均值
+    mean = sum(numbers) / n
+
+    # 中位数
+    sorted_nums = sorted(numbers)
+    mid = n // 2
+    if n % 2 == 0:
+        median = (sorted_nums[mid - 1] + sorted_nums[mid]) / 2
+    else:
+        median = sorted_nums[mid]
+
+    # 标准差
+    variance = sum((x - mean) ** 2 for x in numbers) / (n - 1)
+    std_dev = variance ** 0.5
+
+    return (mean, median, std_dev)
+
 def is_odd(n):
     """判断是否为奇数"""
     return n % 2 == 1
