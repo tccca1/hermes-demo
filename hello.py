@@ -25,6 +25,18 @@ def is_even(n):
     """判断是否为偶数"""
     return n % 2 == 0
 
+
+def fibonacci(n):
+    """返回第 n 个斐波那契数"""
+    if n < 0:
+        return 0
+    if n <= 1:
+        return n
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
+
 def is_odd(n):
     """判断是否为奇数"""
     return n % 2 == 1
